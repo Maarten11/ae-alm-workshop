@@ -22,3 +22,6 @@ bin/*
 go.work
 
 .DS_Store
+
+# No secrets!
+.env
