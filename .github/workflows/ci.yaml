@@ -15,13 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Quay.io login
+      # Robot login
       - name: Login to Quay.io
         uses: docker/login-action@v3
         with:
           registry: quay.io
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          username: "${{ secrets.USERNAME }}"
+          password: "${{ secrets.PASSWORD }}"
 
       - name: Extract metadata (tags, labels) for Docker
         uses: docker/metadata-action@v4
