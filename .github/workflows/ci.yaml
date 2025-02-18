@@ -5,7 +5,7 @@ on:
   # LET THE PIPELINE TRIGGER ON A PUSH TO ALL BRANCHES
 
 env:
-  CONTAINER_REPOSITORY: quay.io/maarten_p # PUT YOUR OWN USERNAME HERE
+  CONTAINER_REPOSITORY: quay.io/maarten_p/ae-alm-workshop # PUT YOUR OWN USERNAME HERE
   CONTAINER_IMAGE: alm-workshop
   GOLANG_VERSION: 1.23
 
@@ -20,7 +20,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: quay.io
-          username: maarten_p
+          username: "%env(USERNAME)%"
           password: "%env(PASSWORD)%"
 
       - name: Extract metadata (tags, labels) for Docker
